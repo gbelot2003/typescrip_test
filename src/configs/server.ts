@@ -1,4 +1,5 @@
 import express, { Application } from "express"
+import { router } from "../routes"
 
 export class Server {
 
@@ -8,6 +9,11 @@ export class Server {
     constructor() {
         this.app = express()
         this.port = process.env.PORT || '3000'
+
+    }
+
+    routes(){
+        this.app.use(router)
     }
 
     listen() {
