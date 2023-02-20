@@ -4,6 +4,3 @@ import { router } from './src/routes'
 dotenv.config()
 
 const app = new Server()
-app.routes()
-
-app.listen()
