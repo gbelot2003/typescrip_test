@@ -2,7 +2,7 @@ import express, { Application } from "express"
 import { router } from "../routes"
 import cors from "cors"
 const bp = require("body-parser")
-
+import { json } from "express/lib/response"
 export class Server {
 
     private app: Application
@@ -23,8 +23,8 @@ export class Server {
     middlewares() {
 
         // body parse
-        this.app.use(bp)
-        this.app.use(bp.urlencoded({ extended: true }))
+        this.app.use(bp.urlencoded())
+        this.app.use(bp.json({extends: true}))
 
         //CORS
         this.app.use(cors())
