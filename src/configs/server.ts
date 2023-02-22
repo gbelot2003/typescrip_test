@@ -20,9 +20,9 @@ export class Server {
     async dbConnection() {
         try {
             await mysqldb.authenticate()
-            console.log("Database online")
+            console.log('Connection has been established successfully.');
         } catch (error) {
-            throw new Error()
+            console.error('Unable to connect to the database:', error);
         }
     }
 
