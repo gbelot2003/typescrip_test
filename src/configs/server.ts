@@ -1,8 +1,8 @@
 import express, { Application } from "express"
 import { router } from "../routes"
 import cors from "cors"
+import sequelize from "./mysql"
 const bp = require("body-parser")
-import { json } from "express/lib/response"
 export class Server {
 
     private app: Application
@@ -11,9 +11,18 @@ export class Server {
     constructor() {
         this.app = express()
         this.port = process.env.PORT || '3000'
+        this.dbConnection()
         this.middlewares()
         this.routes()
         this.listen()
+    }
+
+    async dbConnection() {
+        try {
+            await sequelize.authenticate
+        } catch (error) {
+            throw new Error()
+        }
     }
 
     routes() {
@@ -24,7 +33,7 @@ export class Server {
 
         // body parse
         this.app.use(bp.urlencoded())
-        this.app.use(bp.json({extends: true}))
+        this.app.use(bp.json({ extends: true }))
 
         //CORS
         this.app.use(cors())
