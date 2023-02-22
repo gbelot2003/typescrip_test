@@ -2,6 +2,11 @@ import { DataType, DataTypes } from "sequelize";
 import mysqldb from "../configs/connections"
 
 const user = mysqldb.define('users', {
+    id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
+    },
     name: {
         type: DataTypes.STRING
     },
