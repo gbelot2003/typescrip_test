@@ -1,7 +1,7 @@
 import express, { Application } from "express"
 import { router } from "../routes"
 import cors from "cors"
-import sequelize from "./mysql"
+import mysqldb from "./connections"
 const bp = require("body-parser")
 export class Server {
 
@@ -19,7 +19,8 @@ export class Server {
 
     async dbConnection() {
         try {
-            await sequelize.authenticate
+            await mysqldb.authenticate()
+            console.log("Database online")
         } catch (error) {
             throw new Error()
         }
