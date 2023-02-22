@@ -1,7 +1,7 @@
 import { DataType, DataTypes } from "sequelize";
 import mysqldb from "../configs/connections"
 
-const Usuario = mysqldb.define('Usuario', {
+const user = mysqldb.define('users', {
     name: {
         type: DataTypes.STRING
     },
@@ -16,4 +16,4 @@ const Usuario = mysqldb.define('Usuario', {
     }
 })
 
-export default Usuario
+export default user
