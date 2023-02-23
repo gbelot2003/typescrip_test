@@ -1,5 +1,6 @@
-import { Router, Request, Response } from "express";
+import { Router } from "express";
 import { Usuario, Usuarios } from "../controllers/UsuariosController"
+import { session } from "../middlewares/session.middleware";
 
 const router = Router()
 
@@ -7,13 +8,13 @@ const router = Router()
  * GET
  * /usuarios/
  */
-router.get("/", Usuarios)
+router.get("/", session, Usuarios)
 
 /**
  * GET
  * /usuarios/?id
  */
-router.get("/:id", Usuario)
+router.get("/:id", session, Usuario)
 
 
 export { router }
