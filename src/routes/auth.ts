@@ -5,12 +5,12 @@ import { registerController, loginController } from "../controllers/RegisterCont
 const router = Router();
 
 /**
- * http://localhost/auth/register
+ * http://localhost3000/auth/register
  */
 router.post("/register", registerController)
 
 /*
- * http://localhost3002/auth/login
+ * http://localhost3000/auth/login
 */
 router.post("/login", loginController)
 

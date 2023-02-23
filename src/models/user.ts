@@ -1,9 +1,9 @@
 import { UsersInstance, UsersAttributes, UsersCreationAttributes } from "../interfaces/user.interface";
 
 import { DataTypes } from "sequelize";
-import mysqldb from "../configs/connections"
+import db from "../configs/connections"
 
-const user = mysqldb.define<UsersInstance>(
+const user = db.define<UsersInstance>(
     'users',
     {
         id: {
