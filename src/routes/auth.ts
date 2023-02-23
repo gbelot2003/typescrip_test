@@ -1,5 +1,5 @@
 import { Request, Response, Router } from "express";
-import { registerController } from "../controllers/RegisterController"
+import { registerController, loginController } from "../controllers/RegisterController"
 
 
 const router = Router();
@@ -12,6 +12,6 @@ router.post("/register", registerController)
 /*
  * http://localhost3002/auth/login
 */
-//router.post("/login", loginController)
+router.post("/login", loginController)
 
 export { router }
