@@ -1,9 +1,9 @@
 import { Model, Optional } from 'sequelize';
+import { Auth } from './Auth.interface';
 
-interface UsersAttributes {
+interface UsersAttributes extends Auth {
     id: string;
     name: string;
-    email: string;
     state: boolean;
 };
 

@@ -8,7 +8,7 @@ const user = mysqldb.define<UsersInstance>(
     {
         id: {
             allowNull: false,
-            autoIncrement: false,
+            autoIncrement: true,
             primaryKey: true,
             type: DataTypes.UUID,
             unique: true,
@@ -19,9 +19,15 @@ const user = mysqldb.define<UsersInstance>(
         email: {
             type: DataTypes.STRING,
         },
+        password:{
+            type: DataTypes.STRING
+        },
         state: {
             type: DataTypes.BOOLEAN,
         },
+    }, 
+    {
+        timestamps: true,
     }
 );
 
